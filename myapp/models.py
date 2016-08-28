@@ -11,7 +11,7 @@ class Catalog(models.Model):
 
 
 class Product(models.Model):
-	category = models.ForeignKey('CatalogCategory',related_name='products')
+    category = models.ForeignKey('CatalogCategory',related_name='products')
     name = models.CharField(max_length = 300)
     slug = models.SlugField(max_length = 150)
     description = models.TextField()
