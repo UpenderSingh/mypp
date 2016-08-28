@@ -10,7 +10,8 @@ class Catalog(models.Model):
     pub_date = models.DateTimeField(default=datetime.now)
 
 
-class Product(models.Model): 
+class Product(models.Model):
+	category = models.ForeignKey('CatalogCategory',related_name='products')
     name = models.CharField(max_length = 300)
     slug = models.SlugField(max_length = 150)
     description = models.TextField()
